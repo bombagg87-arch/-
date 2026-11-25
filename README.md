@@ -16,11 +16,12 @@
 | `film/img/*.jpg` | 8 кадров-постеров (сгенерированы для фильма) |
 | `film/audio/*.mp3` | закадровая озвучка по главам (~2:00 суммарно) |
 | `film/build_single.py` | сборка автономного одностраничного файла |
+| `film/serve.py` | сервер превью: Range для mp3, no-cache, без X-Frame-Options |
 
 ## Как смотреть
 
 - **Одним файлом:** скачайте `grozovoy-klinok-film.html` (3,9 МБ) и откройте в браузере — можно пересылать в мессенджере.
-- **Через сервер:** `python3 -m http.server 8000 --directory film` → http://localhost:8000
+- **Через сервер:** `python3 film/serve.py 8000` → http://localhost:8000 (Range-запросы и no-cache — перемотка mp3 работает корректно)
 - **Пересобрать автономную версию:** `python3 film/build_single.py`
 
 ## Управление
